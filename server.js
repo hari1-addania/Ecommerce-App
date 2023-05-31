@@ -5,10 +5,13 @@ import connectDB from "./config/db.js"
 import authRoutes from "./Routes/authRoute.js"
 import categoryRoutes from "./Routes/categoryRoutes.js"
 import productRoutes from "./Routes/productRoute.js"
+import {fileURLToPath} from 'url';
 import cors from "cors"
 import path from "path"
 dotenv.config()
 connectDB();
+const __filename = fileURLToPath(import.meta.url)
+const __dirname = path.dirname(__filename)
 const app = express()
 
 app.use(cors())
